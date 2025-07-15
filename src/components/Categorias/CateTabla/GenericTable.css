@@ -1,0 +1,77 @@
+.table-container {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 10px;
+}
+
+.categories-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.categories-table th,
+.categories-table td {
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.categories-table thead {
+  background-color: #f9f9f9;
+}
+
+.categories-table th {
+  font-weight: bold;
+  color: #333;
+}
+
+.categories-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.categories-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.row-alternate {
+  background-color: #fcfcfc;
+}
+
+.category-name {
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  transition: transform 0.1s ease;
+}
+
+.edit-button:hover {
+  color: #ff8c00;
+  transform: scale(1.1);
+}
+
+.delete-button:hover {
+  color: #e74c3c;
+  transform: scale(1.1);
+}
+
+.no-results {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #888;
+}

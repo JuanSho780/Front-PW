@@ -1,0 +1,60 @@
+.fin-container {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.fin-container h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.fin-container p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.fin-flex {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.fin-derecha {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+}
+
+.resumen-container,
+.direccion-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.resumen-container h4,
+.direccion-container h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.resumen-container div,
+.direccion-container p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}

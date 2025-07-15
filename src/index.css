@@ -1,0 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}

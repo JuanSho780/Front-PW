@@ -1,0 +1,17 @@
+.robert{
+    display: flex;
+}
+.text-green-600 {
+  color: rgb(26, 241, 98);
+}
+.text-red-600 {
+  color: rgb(255, 64, 0);
+}
+.robert input{
+  width: 1200px;
+  height: 34px;
+}
+.robert button{
+  margin-bottom: 20px;
+  height: 34px;
+}

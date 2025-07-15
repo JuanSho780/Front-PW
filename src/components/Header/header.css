@@ -1,0 +1,65 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.logo .dot {
+  color: red;
+}
+
+.search {
+  width: 45%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+.btn-secundario {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.landing-container {
+  width: 1350px;
+  padding: 0;
+}
+
+/* Menú principal */
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background-color: #ff5a00;
+  margin: 0;
+  padding: 12px;
+  color: white;
+  font-weight: 500;
+}
+.menu li {
+  cursor: pointer;
+}
+.ofertas {
+  font-weight: bold;
+}

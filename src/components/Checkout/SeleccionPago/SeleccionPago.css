@@ -1,0 +1,26 @@
+.seleccion-metodo {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.opcion {
+  width: 180px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  background: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.opcion:hover {
+  border-color: #f44336;
+}
+
+.opcion img {
+  margin-top: 10px;
+  max-width: 100%;
+}

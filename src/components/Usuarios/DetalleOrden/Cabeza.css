@@ -1,0 +1,49 @@
+.productos ordenados{
+    width: 300px;
+    height: 20px;
+    margin-top: 0px;
+}
+.ordenes article{
+    display: flex;
+    margin-top: 50px;
+}
+.ordenes article h1{
+    font-size: 40px;
+}
+.ordenes article p{
+    color: #FE624C;
+    margin-top: 99px;
+    font-size: 40px;
+}
+
+.estados{
+    display: flex;
+    margin-left: 650px;
+}
+.estados h2{
+    margin-top: 18px;
+}
+.estados h3{
+    margin-bottom: 20px;
+    color: #3AA423;
+}
+.monto{
+    display: flex;
+    margin-left: 650px;
+}
+tr td img{
+    width: 30px;
+    height: 30px;
+}
+body{
+    width:100%;
+    height: auto;
+}
+.encabezado{
+    border: 2px solid black;
+   border-radius: 10px;
+   width: 1350px;
+}
+table{
+    margin-left: 10px;
+}

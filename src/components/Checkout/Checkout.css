@@ -1,0 +1,77 @@
+.checkout-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.checkout-container {
+  flex: 1.5;
+}
+
+.checkout-formulario {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-resumen {
+  flex: 1;
+  align-self: flex-start;
+}
+
+.form-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.resumen-compra {
+  flex: 1;
+  align-self: flex-start;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,47 @@
+.form-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-card img {
+  width: 50%;
+  display: block;
+  margin: 0 auto 16px auto;
+  border-radius: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.btn-group button {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

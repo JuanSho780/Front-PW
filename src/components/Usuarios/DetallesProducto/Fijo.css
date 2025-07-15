@@ -1,0 +1,92 @@
+
+/* Box Container */
+.box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 2px solid black;
+}
+
+/* Title Styles */
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 100px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* User Detail Styles */
+.user-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.avatar-large {
+  border-radius: 50%;
+  width: 200px;
+  height: 150px;
+  margin-left: 300px;
+}
+
+/* User Information */
+p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Table Styles */
+table {
+  width:1300px;
+  border-collapse: collapse;
+  margin-top: 10px;
+
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+td {
+  color: #555;
+}
+
+.red {
+  color: #e53935; /* Red color for ID */
+}
+
+/* Action Button Styles */
+td img {
+  cursor: pointer;
+  width: 250px;
+  height: 90px;
+}
+
+/* Pagination Styles */
+
+
+body {
+   margin-top: 0px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    width: 1000px;
+    height: 800px;
+}
