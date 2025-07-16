@@ -46,10 +46,17 @@ const Login = () => {
 
       if (response.ok) {
         const userData = await response.json();
+
+        if (!userData.isActive) {
+          setError('Tu cuenta está inactiva. Contacta al administrador.');
+          return;
+        }
+
         localStorage.setItem('usuario', JSON.stringify(userData));
         setUsuario(userData);
 
         alert('Inicio de sesión exitoso');
+
         if (userData.isAdmin) {
           navigate('/dashboard');
         } else {

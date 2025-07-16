@@ -1,103 +1,112 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ Importación necesaria
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
-// import Header from '../Header/header';
-import Footer from '../Footer/Footer';
 
 const Register = () => {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
+    nombredeusuario: '',
+    password: '',
     nombre: '',
     apellido: '',
-    dni: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    direccion: '',
+    ciudad: '',
+    telefono: '',
+    isAdmin: false,
+    isActive: true,
   });
 
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // ✅ Inicializa navegación
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { nombre, apellido, dni, email, password, confirmPassword } = form;
-
-    if (!nombre || !apellido || !dni || !email || !password || !confirmPassword) {
-      setError('Todos los campos son obligatorios');
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setError('Las contraseñas no coinciden');
-      return;
-    }
-
-    alert('Usuario registrado correctamente');
     setError('');
-    navigate('/'); // ✅ Redirige a App.jsx (Home)
+
+    if (!formData.nombredeusuario || !formData.password) {
+      setError('Correo y contraseña son obligatorios.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3001/Usuario', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        const newUser = await response.json(); // Aquí se obtiene el nuevo usuario creado
+        const idUsuario = newUser.id;
+
+        // Crear carrito para el nuevo usuario
+        const carritoResponse = await fetch('http://localhost:3001/Carrito/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ idUsuario })
+        });
+
+        if (carritoResponse.ok) {
+          alert('Usuario registrado con éxito y carrito creado');
+          navigate('/login');
+        } else {
+          setError('Usuario registrado, pero hubo un problema al crear el carrito');
+        }
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || 'Error al registrar usuario');
+      }
+    } catch (err) {
+      setError('Error de conexión con el servidor');
+    }
   };
 
   return (
-    <>
-      <div className="login-wrapper">
-        <form className="register-card" onSubmit={handleSubmit}>
-          <h2>Registro</h2>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h2>Registrarme</h2>
 
-          <div className="form-grid">
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Nombre del usuario"
-              value={form.nombre}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="apellido"
-              placeholder="Apellido del usuario"
-              value={form.apellido}
-              onChange={handleChange}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo electrónico"
-              value={form.email}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="dni"
-              placeholder="DNI"
-              value={form.dni}
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-              value={form.password}
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirmar contraseña"
-              value={form.confirmPassword}
-              onChange={handleChange}
-            />
-          </div>
+        <input type="text" name="nombredeusuario" placeholder="Correo electrónico"
+               value={formData.nombredeusuario} onChange={handleChange} />
 
-          {error && <p className="error">{error}</p>}
+        <input type="password" name="password" placeholder="Contraseña"
+               value={formData.password} onChange={handleChange} />
 
-          <button type="submit">Registrarme</button>
-        </form>
-      </div>
-      <Footer />
-    </>
+        <input type="text" name="nombre" placeholder="Nombre"
+               value={formData.nombre} onChange={handleChange} />
+
+        <input type="text" name="apellido" placeholder="Apellido"
+               value={formData.apellido} onChange={handleChange} />
+
+        <input type="text" name="direccion" placeholder="Dirección"
+               value={formData.direccion} onChange={handleChange} />
+
+        <input type="text" name="ciudad" placeholder="Ciudad"
+               value={formData.ciudad} onChange={handleChange} />
+
+        <input type="text" name="telefono" placeholder="Teléfono"
+               value={formData.telefono} onChange={handleChange} />
+
+        <label>
+          ¿Administrador?
+          <input type="checkbox" name="isAdmin"
+                 checked={formData.isAdmin} onChange={handleChange} />
+        </label>
+
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        <button type="submit">Crear cuenta</button>
+
+        <p>¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link></p>
+      </form>
+    </div>
   );
 };
 
