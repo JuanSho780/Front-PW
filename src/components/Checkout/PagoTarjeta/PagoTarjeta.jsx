@@ -39,8 +39,8 @@ const PagoTarjeta = ({ volver }) => {
       // 1. Crear orden
       const resOrden = await axios.post('http://localhost:3001/Orden/create/', {
         idUsuario: usuario.id,
-        total,
-        subtotal: total,
+        //total: total,
+        //subtotal: total,
         metodoDeEntrega: 'delivery',
         nroTarjeta,
         tipoTarjeta,

@@ -82,9 +82,9 @@ function App() {
           {categorias.map((cat) => (
             <div key={cat.id} className="categoria">
               <div className="circle">
-                <img src={`/img/${cat.nombre.toLowerCase().split(" ")[0]}.png`} alt={cat.nombre} />
-              </div>
-              <p>{cat.nombre}</p>
+                {/* <img src={`/img/${cat.nombre.toLowerCase().split(" ")[0]}.png`} alt={cat.nombre} /> */}
+                <p>{cat.nombre}</p>
+              </div> 
             </div>
           ))}
         </div>
